@@ -1,4 +1,4 @@
-﻿using namespace std;
+using namespace std;
 
 #include <iostream>
 #include <stdio.h>
@@ -16,9 +16,6 @@ int main()
 	float** A = new float* [M];
 	for (c = 0; c < M; c++)
 		A[c] = new float[N];
-	float** B = new float* [M];
-	for (c = 0; c < M; c++)
-		B[c] = new float[N];
 	cout << "Введите элементы массива: " << endl;
 	for (i = 0; i < M; i++) {
 		for (j = 0; j < N; j++) {
@@ -41,64 +38,15 @@ int main()
 			};
 		};
 	};
-	if (l < k) {
-		for (i = 0; i < l; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[i][j];
-			};
-		};
-		for (i = l; i <= l; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[k][j];
-			};
-		};
-		for (i = l + 1; i < k; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[i][j];
-			};
-		};
-		for (i = k; i <= k; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[l][j];
-			};
-		};
-		for (i = k + 1; i < M; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[i][j];
-			};
-		};
-	}
-	else if (k < l) {
-		for (i = 0; i < k; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[i][j];
-			};
-		};
-		for (i = k; i <= k; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[l][j];
-			};
-		};
-		for (i = k + 1; i < l; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[i][j];
-			};
-		};
-		for (i = l; i <= l; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[k][j];
-			};
-		};
-		for (i = l + 1; i < M; i++) {
-			for (j = 0; j < N; j++) {
-				B[i][j] = A[i][j];
-			};
-		};
+	for (i = 0; i < N; i++){
+		c = A[i][l];
+		A[i][l] = A[i][k];
+		A[i][k] = c;
 	};
 	cout << "Измененный массив: " << endl;
 	for (i = 0; i < M; i++) {
 		for (j = 0; j < N; j++) {
-			cout << B[i][j] << "\t";
+			cout << B[i][j] << " ";
 		};
 		cout << endl;
 	};
