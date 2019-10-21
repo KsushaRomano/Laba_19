@@ -98,7 +98,7 @@ int main()
 	cout << "Измененный массив: " << endl;
 	for (i = 0; i < M; i++) {
 		for (j = 0; j < N; j++) {
-			cout << B[i][j] << " ";
+			cout << B[i][j] << "\t";
 		};
 		cout << endl;
 	};
