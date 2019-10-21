@@ -39,9 +39,9 @@ int main()
 		};
 	};
 	for (i = 0; i < N; i++){
-		c = A[i][l];
-		A[i][l] = A[i][k];
-		A[i][k] = c;
+		c = A[l][i];
+		A[l][i] = A[k][i];
+		A[k][i] = c;
 	};
 	cout << "Измененный массив: " << endl;
 	for (i = 0; i < M; i++) {
